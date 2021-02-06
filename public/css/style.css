@@ -1,0 +1,287 @@
+:root {
+  --primary: #ddaf94;
+  --primary-hover: #cba088;
+  --secondary: #e8cebf;
+  --tertiary: #266150;
+  --quarternary: #4f4846;
+  --quinary: #fdf8f5;
+}
+
+.col,
+.col-1,
+.col-10,
+.col-11,
+.col-12,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-auto,
+.col-lg,
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-auto,
+.col-md,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-auto,
+.col-sm,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-auto,
+.col-xl,
+.col-xl-1,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-auto {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+body {
+  font-family: 'BioRhyme', serif;
+  background: url(../image/dot-grid.png) repeat 0 0;
+}
+
+body a {
+  color: var(--primary);
+}
+
+body a:hover {
+  color: var(--primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header {
+  background: var(--quinary);
+}
+
+#logo {
+  color: var(--primary);
+  font-size: 40px;
+}
+
+#logo:hover {
+  text-decoration: unset;
+}
+
+.navbar .user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin: 0 10px 0 10px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--secondary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--secondary);
+}
+
+.btn-primary:focus {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--secondary) !important;
+  box-shadow: 0 0 0 0.2rem var(--secondary) !important;
+}
+
+.show > .btn-primary.dropdown-toggle {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--secondary) !important;
+  box-shadow: 0 0 0 0.2rem var(--secondary) !important;
+}
+
+.navbar .dropdown-menu {
+  width: 100%;
+}
+
+/* Home Search Bar */
+.homepage .question-button {
+  color: #ffffff !important;
+}
+.homepage .question-button:active {
+  background-color: var(--primary-hover) !important;
+}
+.homepage .questions-searchbar form input {
+  width: 80%;
+}
+
+.homepage .questions-searchbar form button {
+  width: 20%;
+}
+
+/* Home filter buttons */
+.homepage .questions-buttons-filter > div {
+  width: 33.33%;
+}
+
+.homepage .questions-buttons-filter button {
+  width: 100%;
+}
+
+.homepage .questions-buttons-filter button:hover {
+  color: #fff;
+  background-color: #545b62;
+  border-color: #4e555b;
+}
+
+.homepage .dropdown-menu {
+  width: 100%;
+}
+
+.homepage .dropdown-item:active {
+  background-color: #545b62;
+}
+
+.homepage .btn:focus {
+  box-shadow: 0 0 0 0.2rem #4e555b;
+}
+
+.btn-secondary {
+  color: unset;
+  background-color: unset;
+  border-color: transparent;
+}
+
+/* Questions module */
+.question-module h2 {
+  text-align: center;
+}
+
+.question-module p {
+  font-size: 20px;
+}
+
+.question-module .answers-group {
+  text-align: center;
+}
+
+.question-module .answers-group > div {
+  width: 50%;
+  margin: 50px;
+}
+
+/* New question form */
+.new-question-form textarea.form-control {
+  height: 300px;
+}
+
+.new-question-form .topic button {
+  margin-left: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Question show */
+
+#answer-trigger,
+#delete-trigger {
+  width: 30%;
+}
+
+.questions-show-page p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* Profile Detail Page */
+
+.profile-detail-page .left-column,
+.profile-detail-page .right-column {
+  width: 50%;
+}
+
+/***** checkbox style *****/
+
+.answer-not-selected {
+  display: none;
+}
+
+.round {
+  position: relative;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: '';
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type='checkbox'] {
+  visibility: hidden;
+}
+
+.answer-selected .round input[type='checkbox'] + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.answer-selected .round input[type='checkbox'] + label:after {
+  opacity: 1;
+}

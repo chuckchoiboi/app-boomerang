@@ -1,0 +1,192 @@
+<%- include('../partials/base') %>
+<%- include('../partials/header') %>
+<div class="questions-show-page container">
+    <div class="question-card row d-flex flex-column mt-5 py-3">
+        <div class="question-card-header my-3 col-md-9 mx-auto">
+            <h1 class="question-title"><%= question.questionTitle %></h1>
+        </div>
+        <div class="question-card-main d-flex flex-column col-md-9 mx-auto">
+            <div class="author d-flex">
+                <span class="mr-2">Author:</span>
+                <span><b><%= question.authorUsername %></b></span>
+            </div>
+            <div class="published d-flex">
+                <span class="mr-2">Published: </span>
+                <span><%= question.createdAt %></span>
+            </div>
+            <div class="topics d-flex">
+                <% question.topic.forEach(element => { %>
+                <a href="/?topic=<%= element %>">#<%= element %>&nbsp</a>
+                <% }) %>
+            </div>
+            <div class="question-body d-flex">
+                <p>
+                    <%= question.questionBody %>
+                </p>
+            </div>
+            <% if (user) { %>
+                <% if (!user._id.equals(question.authorId)) { %>
+                    <button id="answer-trigger" class="btn btn-outline-success open-button">Answer question</button>
+                <% } else { %>
+                    <button id="delete-trigger" class="btn btn-outline-danger" onclick="toggleForm()">Delete question</button>
+                    <div class="form-popup d-none my-2" id="delete-form">
+                        <form action="/questions/delete/<%= question._id %>?_method=DELETE" method="POST" class="form-container">
+                            <p>Click button below to delete the question</p>                    
+                            <button type="submit" class="btn btn-danger">Confirm</button>
+                            <button type="button" class="btn btn-outline-danger" onclick="toggleForm()">Cancel</button>
+                        </form>
+                    </div>
+                <% } %>
+            <% } else { %>
+            <button id="answer-trigger" class="btn btn-outline-success">Answer question</button>
+            <% } %>
+        </div>
+        <div id="answer-form" class="col-md-9 mx-auto d-none my-5">
+            <form action="/questions/answers/add/<%= question._id %>" method="POST">
+                <% if (!user) { %>
+                <textarea class="form-control" type="text" name="answerBody" maxlength="200"
+                    placeholder="Please login to answer the question" disabled></textarea>
+                <input type="submit" value="Login using Google">
+                <% } else {%>
+                <textarea class="form-control my-2" type="text" name="answerBody" maxlength="200" placeholder="Answer to the question goes here..." required></textarea>
+                <input class="btn btn-primary" type="submit" value="Answer">
+                <% }%>
+            </form>
+        </div>
+    </div>
+
+
+    <% if (question.answers.length) { %>
+        <% answers.forEach((answer, idx)=> { %>
+
+            <% if (answerSelected) { %>
+                <div class="answer-card row mt-5">
+                    <% if(user) { %> 
+                        <% if (user._id.equals(question.authorId)) { %>
+                        <div class="col-md-9 mx-auto answer-selector container <%= answer.selected ? 'answer-selected' : 'answer-not-selected' %>" id="answer-selector<%= idx %>">
+                            <form action="/questions/answers/select/update/<%= answer._id %>?_method=PUT" method="POST">
+                            <div class="round">
+                                <input type="checkbox" class="answer-selector-checkbox" id="checkbox<%= idx %>" onChange="this.form.submit()" />
+                                <label for="checkbox<%= idx %>"></label>
+                            </div>
+                            </form>
+                        </div>
+                        <% } else { %>
+                            <div class="col-md-9 mx-auto answer-selector container <%= answer.selected ? 'answer-selected' : 'answer-not-selected' %>"
+                                id="answer-selector<%= idx %>">
+                                <form onsubmit="return false;">
+                                    <div class="round">
+                                        <input type="checkbox" class="answer-selector-checkbox" id="checkbox<%= idx %>"
+                                            onChange="this.form.submit()" />
+                                        <label for="checkbox<%= idx %>"></label>
+                                    </div>
+                                </form>
+                            </div>
+                        <% } %> 
+                    <% } else {%>
+                    <div class="col-md-9 mx-auto answer-selector container <%= answer.selected ? 'answer-selected' : 'answer-not-selected' %>"
+                        id="answer-selector<%= idx %>">
+                        <form onsubmit="return false;">
+                            <div class="round">
+                                <input type="checkbox" class="answer-selector-checkbox" id="checkbox<%= idx %>"
+                                    onChange="this.form.submit()" />
+                                <label for="checkbox<%= idx %>"></label>
+                            </div>
+                        </form>
+                    </div>
+                    <% } %> 
+                    <div class="col-md-9 mx-auto mb-5 answer-card-main">
+                        <div class="author d-flex">
+                            <span class="mr-2">Author:</span>
+                            <span><b>
+                                <%= answer.authorUsername %>
+                                </b>
+                            </span>
+                        </div>
+                        <div class="published d-flex">
+                            <span class="mr-2">Published: </span>
+                            <span>
+                                <%= answer.createdAt %>
+                            </span>
+                        </div>
+                        <div class="answer-body d-flex">
+                            <p>
+                                <%= answer.answerBody %>
+                            </p>
+                        </div>
+
+                        <% if (user) { %>
+                            <% if (user._id.equals(answer.authorId)) { %>
+                                    <button class="btn btn-outline-danger delete-answer-trigger">Delete answer</button>
+                                    <div class="form-popup d-none my-2 delete-form">
+                                        <form action="/questions/answers/delete/<%= answer._id %>?_method=DELETE" method="POST"
+                                            class="form-container">
+                                            <p>Click button below to delete the answer</p>
+                                            <button type="submit" class="btn btn-danger">Confirm</button>
+                                            <button type="button" class="btn btn-outline-danger">Cancel</button>
+                                        </form>
+                                    </div>
+                            <% } %>
+                        <% } %>
+
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="answer-card row mt-5">
+                    <% if(user) { %>
+                        <% if (user._id.equals(question.authorId)) { %>
+                            <div class="col-md-9 mx-auto answer-selector container"
+                                id="answer-selector<%= idx %>">
+                                <form action="/questions/answers/select/update/<%= answer._id %>?_method=PUT" method="POST">
+                                    <div class="round">
+                                        <input type="checkbox" class="answer-selector-checkbox" id="checkbox<%= idx %>"
+                                            onChange="this.form.submit()" />
+                                        <label for="checkbox<%= idx %>"></label>
+                                        <span class="ml-3">Select Answer</span>
+                                    </div>
+                                </form>
+                            </div>
+                        <% } %>
+                    <% } %>
+                        <div class="col-md-9 mx-auto mb-5 answer-card-main">
+                            <div class="author d-flex">
+                                <span class="mr-2">Author:</span>
+                                <span><b>
+                                    <%= answer.authorUsername %>
+                                    </b>
+                                </span>
+                            </div>
+                            <div class="published d-flex">
+                                <span class="mr-2">Published: </span>
+                                <span>
+                                    <%= answer.createdAt %>
+                                </span>
+                            </div>
+                            <div class="answer-body d-flex">
+                                <p>
+                                    <%= answer.answerBody %>
+                                </p>
+                            </div>
+                            <% if (user) { %>
+                                <% if (user._id.equals(answer.authorId)) { %>
+                                    <button class="btn btn-outline-danger delete-answer-trigger">Delete answer</button>
+                                    <div class="form-popup d-none my-2 delete-form">
+                                        <form action="/questions/answers/delete/<%= answer._id %>?_method=DELETE" method="POST"
+                                            class="form-container">
+                                            <p>Click button below to delete the answer</p>
+                                            <button type="submit" class="btn btn-danger">Confirm</button>
+                                            <button type="button" class="btn btn-outline-danger">Cancel</button>
+                                        </form>
+                                    </div>
+                                    <% } %>
+                                        <% } %>
+                        </div>
+                    </div>
+            <% } %> 
+
+        <% }) %>
+        </div>
+    <% } %>
+
+
+<%- include('../partials/footer') %>

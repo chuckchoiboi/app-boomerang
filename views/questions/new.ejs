@@ -1,0 +1,32 @@
+<%- include('../partials/base') %>
+<%- include('../partials/header') %>
+    <div class="container new-question-form">
+        <form action="/questions/add" method="POST">
+            <div class="form-group m-5 p-5 shadow">
+                <h1>Submit your question</h1>
+                <input class="form-control mx-1 my-2" type="text" name="questionTitle" maxlength="40" placeholder="Title" required>
+                <textarea class="form-control mx-1 my-2" type="text" name="questionBody" maxlength="200" placeholder="Question" required></textarea>
+                
+                <div class="topic">
+                    <select id="topic" name="topic" class="selectpicker" multiple data-live-search="true" data-none-selected-text="Topic">
+                        <option value="art">art</option>
+                        <option value="education">education</option>
+                        <option value="entertainment">entertainment</option>
+                        <option value="finance">finance</option>
+                        <option value="food">food</option>
+                        <option value="game">game</option>
+                        <option value="health">health</option>
+                        <option value="lifestyle">lifestyle</option>
+                        <option value="politics">politics</option>
+                        <option value="shopping">shopping</option>
+                        <option value="sports">sports</option>
+                        <option value="travel">travel</option>
+                    </select>
+                </div>
+
+                <input class="btn btn-primary mx-2" type="submit" value="Post Question">
+            </div>
+        </form>
+    </div>
+
+<%- include('../partials/footer') %>
