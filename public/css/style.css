@@ -355,4 +355,10 @@ footer p {
     margin-left: 5px;
     margin-right: 5px;
   }
+
+  .questions-show-page .question-card,
+  .questions-show-page .answer-card {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }
