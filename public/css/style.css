@@ -252,6 +252,10 @@ footer p {
 
 /* Question show */
 
+.questions-show-page {
+  background: #ffffff;
+}
+
 #answer-trigger,
 #delete-trigger {
   width: 30%;
