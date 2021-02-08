@@ -185,6 +185,10 @@ footer p {
   width: 20%;
 }
 
+.homepage .question-group {
+  background: #ffffff;
+}
+
 /* Home filter buttons */
 .homepage .questions-buttons-filter > div {
   width: 33.33%;
