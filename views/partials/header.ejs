@@ -1,7 +1,13 @@
 <body>
     <header>
-        <nav class="navbar container">
+        <nav class="navbar">
             <a id="logo" href="/">Boomerang</a>
+            <div class="questions-searchbar">
+                <form action="/" class="d-flex">
+                    <input name="search" type="text" placeholder="What are you looking for?">
+                    <button type="submit" class="btn btn-primary ml-2">Search</button>
+                </form>
+            </div>
             <!-- Login -->
             <% if (user) { %>
                 <div id="login-wrapper">
