@@ -137,6 +137,14 @@ footer p {
   margin: 5px;
 }
 
+.navbar .questions-searchbar {
+  width: 60%;
+}
+
+.navbar .questions-searchbar input {
+  width: 100%;
+}
+
 .navbar .user-avatar {
   width: 50px;
   height: 50px;
@@ -176,13 +184,6 @@ footer p {
 }
 .homepage .question-button:active {
   background-color: var(--primary-hover) !important;
-}
-.homepage .questions-searchbar form input {
-  width: 80%;
-}
-
-.homepage .questions-searchbar form button {
-  width: 20%;
 }
 
 .homepage .question-group {
