@@ -352,6 +352,9 @@ footer p {
     margin-left: 20px;
     margin-right: 20px;
   }
+  .questions-searchbar {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
