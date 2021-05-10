@@ -349,6 +349,7 @@ footer p {
   #login-wrapper {
     text-align: right;
     margin-top: auto;
+    margin-bottom: auto;
   }
 
   .navbar .user-avatar {
