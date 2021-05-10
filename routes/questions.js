@@ -8,8 +8,6 @@ const authRequired = require('../middleware/authRequired')
 const ctrls = require('../controllers')
 
 // http://localhost:3000/questions
-
-router.get('/new', authRequired, ctrls.questions.newQuestion)
 router.post('/add', authRequired, ctrls.questions.addQuestion)
 router.get('/show/:id', returnPath, ctrls.questions.showQuestion)
 router.post('/answers/add/:id', authRequired, ctrls.questions.addAnswer)

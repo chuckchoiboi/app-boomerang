@@ -1,14 +1,5 @@
 const db = require('../config/database')
 
-const newQuestion = (req, res) => {
-
-    const context = {
-        user: req.user,
-    }
-
-    res.render('questions/new', context)
-}
-
 const addQuestion = (req, res) => {
 
     req.body.authorId = req.user._id
@@ -174,7 +165,6 @@ const deleteAnswer = (req, res) => {
 }
 
 module.exports = {
-    newQuestion,
     addQuestion,
     showQuestion,
     addAnswer,

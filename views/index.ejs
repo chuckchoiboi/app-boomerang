@@ -1,9 +1,15 @@
 <%- include('./partials/base') %>
 <%- include('./partials/header') %>
 <div class="homepage container">
+    <% if (user) { %>
     <div class="ask-question row d-flex flex-column my-2">
         <button class="question-button btn btn-primary col-md-3 mx-auto" data-toggle="modal" data-target="#questionModal">Throw your question!</button>
     </div>
+    <% } else { %>
+    <div class="ask-question row d-flex flex-column my-2">
+        <a href="/auth/google" class="question-button btn btn-primary col-md-3 mx-auto">Throw your question!</a>
+    </div>
+    <% } %>
     <!-- Modal -->
     <div class="modal fade" id="questionModal" tabindex="-1" role="dialog" aria-labelledby="questionModalLabel"
         aria-hidden="true">
