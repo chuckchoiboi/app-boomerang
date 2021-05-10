@@ -149,6 +149,10 @@ footer p {
   color: var(--primary);
 }
 
+.questions-searchbar {
+  width: 40%;
+}
+
 .navbar .questions-searchbar input {
   width: 100%;
 }
@@ -335,6 +339,11 @@ footer p {
   }
   .mobile-nav {
     display: block;
+  }
+  #login-wrapper {
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
   }
   main {
     margin-top: 150px;
