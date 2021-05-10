@@ -359,7 +359,7 @@ footer p {
 
 @media only screen and (max-width: 600px) {
   #logo {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   #login-wrapper {
