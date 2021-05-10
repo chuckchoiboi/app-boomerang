@@ -262,7 +262,7 @@ footer p {
 
 /* Question show */
 
-.questions-show-page {
+.questions-show-page .question-card {
   background: #ffffff;
 }
 
