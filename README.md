@@ -79,9 +79,6 @@ Answer
 
 ## TECHNOLOGIES USED
 
-<br>
-<br>
-
 - Node Modules
   - dot-env
   - ejs
@@ -103,9 +100,6 @@ Answer
 <br>
 
 ## Approach
-
-<br>
-<br>
 
 - This app is an express app built using MongoDB as database and EJS as view engine
 - Started off by summarizing userstories, and breaking down the components that are needed for this app to function
