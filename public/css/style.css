@@ -177,8 +177,9 @@ footer p {
 
 .show > .btn-primary.dropdown-toggle {
   background-color: var(--primary-hover) !important;
-  border-color: var(--secondary) !important;
+  border-color: var(--quarternary) !important;
   box-shadow: 0 0 0 0.2rem var(--secondary) !important;
+  color: var(--quarternary) !important;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
