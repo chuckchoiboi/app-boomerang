@@ -1,26 +1,26 @@
-# **APP TITLE: BOOMERANG**
+# **BOOMERANG**
 
 <br>
 <br>
 
-## APP SUMMARY
+## App Link
 
----
+- [Link](https://app-boomerang.herokuapp.com/)
 
 <br>
 <br>
 
-### **Wireframe**
+## **Wireframe**
 
-#### Home Page
+### Home Page
 
 ![entity-relationship-diagram](./project-detail/home.JPG)
 
-#### User Page
+### User Page
 
 ![entity-relationship-diagram](./project-detail/user.JPG)
 
-#### Question Page
+### Question Page
 
 ![entity-relationship-diagram](./project-detail/new-question.JPG)
 
@@ -29,7 +29,7 @@
 <br>
 <br>
 
-### **User Stories**
+## **User Stories**
 
 1. As a user, I can login/logout using Google account
 2. As a user, I can check my user detail that shows **email**, **username**, **number of questions asked**, and **number of answers selected** and **recent questions asked**. Username can be edited.
@@ -42,7 +42,7 @@
 <br>
 <br>
 
-### **Data Models**
+## **Data Models**
 
 ![entity-relationship-diagram](./project-detail/erd.JPG)
 
@@ -79,8 +79,6 @@ Answer
 
 ## TECHNOLOGIES USED
 
----
-
 <br>
 <br>
 
@@ -106,8 +104,6 @@ Answer
 
 ## Approach
 
----
-
 <br>
 <br>
 
@@ -119,13 +115,3 @@ Answer
 - The four CRUD functions are called to perform different types of operations called in HTTP requests
   <br>
   <br>
-
-## NEXT STEPS
-
----
-
-<br>
-<br>
-
-- Planning to add "view my questions" page to show list of questions created by the user that users can get to
-- Notification functionality can be implemented to notify when there's engagement
