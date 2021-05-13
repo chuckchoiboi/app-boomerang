@@ -1,6 +1,6 @@
 :root {
   --primary: #363237;
-  --primary-hover: #73605b;
+  --primary-hover: #2d4262;
   --secondary: #2d4262;
   --tertiary: #73605b;
   --quarternary: #d09683;
@@ -170,9 +170,9 @@ footer p {
 
 .btn-primary:focus {
   background-color: var(--primary-hover) !important;
-  border-color: var(--secondary) !important;
+  border-color: var(--quarternary) !important;
   box-shadow: 0 0 0 0.2rem var(--secondary) !important;
-  color: var(--primary);
+  color: var(--quarternary);
 }
 
 .show > .btn-primary.dropdown-toggle {
