@@ -5,7 +5,7 @@
 
 ## App Link
 
-- [Link](https://app-boomerang.herokuapp.com/)
+-   [Link](https://app-boomerang.up.railway.app/)
 
 <br>
 <br>
@@ -48,64 +48,64 @@
 
 User
 
-- Email: String, unique
-- Username: String, unique
-- Avatar URL: String, unique
-- Questions asked: Number
-- Answers selected: Number
-- Google ID: String
+-   Email: String, unique
+-   Username: String, unique
+-   Avatar URL: String, unique
+-   Questions asked: Number
+-   Answers selected: Number
+-   Google ID: String
 
 Question
 
-- Author ID: mongoose.Types.ObjectId, unique
-- Author Username: String
-- Question Title: String
-- Question Body: String
-- Topics: [String]
-- Answers: [mongoose.Types.ObjectId]
-- Publish Date: Date
+-   Author ID: mongoose.Types.ObjectId, unique
+-   Author Username: String
+-   Question Title: String
+-   Question Body: String
+-   Topics: [String]
+-   Answers: [mongoose.Types.ObjectId]
+-   Publish Date: Date
 
 Answer
 
-- Question Id: mongoose.Types.ObjectId
-- Author Id: mongoose.Types.ObjectId
-- Author Username: String
-- Answer Body: String
-- Answer Selected: Boolean
-- Publish Date
+-   Question Id: mongoose.Types.ObjectId
+-   Author Id: mongoose.Types.ObjectId
+-   Author Username: String
+-   Answer Body: String
+-   Answer Selected: Boolean
+-   Publish Date
 
 <br>
 <br>
 
 ## TECHNOLOGIES USED
 
-- Node Modules
-  - dot-env
-  - ejs
-  - express
-  - express-session
-  - method-override
-  - mongoose
-  - passport
-  - passport-google-oauth
-- Bootstrap
-- jQuery
-- MongoDb Atlas
-- Trello
-- Mockflow
-- Heroku
-- GitHub
+-   Node Modules
+    -   dot-env
+    -   ejs
+    -   express
+    -   express-session
+    -   method-override
+    -   mongoose
+    -   passport
+    -   passport-google-oauth
+-   Bootstrap
+-   jQuery
+-   MongoDb Atlas
+-   Trello
+-   Mockflow
+-   Heroku
+-   GitHub
 
 <br>
 <br>
 
 ## Approach
 
-- This app is an express app built using MongoDB as database and EJS as view engine
-- Started off by summarizing userstories, and breaking down the components that are needed for this app to function
-- Trello was used to break down the project timeline and break down the project in to multi-steps
-- Most of the actions required authentication for the user, so started off by adding Oauth as authentication method, using passport/google strategy
-- Followed the design pattern of MVC framework, working on each feature at a time
-- The four CRUD functions are called to perform different types of operations called in HTTP requests
-  <br>
-  <br>
+-   This app is an express app built using MongoDB as database and EJS as view engine
+-   Started off by summarizing userstories, and breaking down the components that are needed for this app to function
+-   Trello was used to break down the project timeline and break down the project in to multi-steps
+-   Most of the actions required authentication for the user, so started off by adding Oauth as authentication method, using passport/google strategy
+-   Followed the design pattern of MVC framework, working on each feature at a time
+-   The four CRUD functions are called to perform different types of operations called in HTTP requests
+    <br>
+    <br>
